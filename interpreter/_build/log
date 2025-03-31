@@ -2,5 +2,5 @@
 # OCAMLPARAM: unset
 # Shared cache: enabled-except-user-rules
 # Shared cache location: /Users/amayajoshi/.cache/dune/db
-# Workspace root: /Users/amayajoshi/Documents/CS402/OKml/interpreter
+# Workspace root: /Users/amayajoshi/Documents/OKml/interpreter
 # Auto-detected concurrency: 8
