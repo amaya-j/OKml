@@ -46,7 +46,7 @@ let exp0 :=
   | a=exp0; GEQ; b=exp1; { BinOp(Geq, a, b) }
   | a=exp1; { a }
 
-let exp1 := 
+let exp1 :=
   | a=exp1; AND; b=exp2; { BinOp(And, a, b) }
   | a=exp1; OR; b=exp2; { BinOp(Or, a, b) }
   | a=exp2; { a }

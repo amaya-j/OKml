@@ -15,7 +15,7 @@ rule tokenize = parse
     | "let" { LET }
     | "in" { IN }
     | "if" { IF }
-    | "then" { THEN } 
+    | "then" { THEN }
     | "else" { ELSE }
     | "rec" { REC }
     | "fun" { FUN }

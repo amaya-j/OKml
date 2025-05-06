@@ -1,0 +1,882 @@
+
+** Conflict (shift/reduce) in state 93.
+** Tokens involved: UNIT TIMES PLUS OR NOT NEQ MINUS MATCH LT LPAREN LET LEQ LBRACKET INT IF IDENT GT GEQ FUN EQ DIV CONS BOOL AND
+** The following explanations concentrate on token UNIT.
+** This state is reached from parse after reading:
+
+NOT exp5
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+exp1 
+exp2 
+exp3 
+exp4 
+(?)
+
+** In state 93, looking ahead at UNIT, shifting is permitted
+** because of the following sub-derivation:
+
+exp5 exp5 
+NOT exp5 
+    exp CONS exp5 
+    exp0 
+    exp1 
+    exp2 
+    exp3 
+    exp4 
+    exp5 exp5 
+         . UNIT 
+
+** In state 93, looking ahead at UNIT, reducing production
+** exp5 -> NOT exp5
+** is permitted because of the following sub-derivation:
+
+exp5 exp5 // lookahead token appears because exp5 can begin with UNIT
+NOT exp5 . 
+
+** Conflict (shift/reduce) in state 92.
+** Tokens involved: UNIT TIMES PLUS OR NOT NEQ MINUS MATCH LT LPAREN LET LEQ LBRACKET INT IF IDENT GT GEQ FUN EQ DIV CONS BOOL AND
+** The following explanations concentrate on token UNIT.
+** This state is reached from parse after reading:
+
+MINUS exp5
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+exp1 
+exp2 
+exp3 
+exp4 
+(?)
+
+** In state 92, looking ahead at UNIT, shifting is permitted
+** because of the following sub-derivation:
+
+exp5 exp5 
+MINUS exp5 
+      exp CONS exp5 
+      exp0 
+      exp1 
+      exp2 
+      exp3 
+      exp4 
+      exp5 exp5 
+           . UNIT 
+
+** In state 92, looking ahead at UNIT, reducing production
+** exp5 -> MINUS exp5
+** is permitted because of the following sub-derivation:
+
+exp5 exp5 // lookahead token appears because exp5 can begin with UNIT
+MINUS exp5 . 
+
+** Conflict (shift/reduce) in state 91.
+** Token involved: CONS
+** This state is reached from parse after reading:
+
+MATCH exp WITH LBRACKET RBRACKET ARROW exp BAR IDENT CONS IDENT ARROW exp
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+(?)
+
+** In state 91, looking ahead at CONS, reducing production
+** exp -> MATCH exp WITH LBRACKET RBRACKET ARROW exp BAR IDENT CONS IDENT ARROW exp
+** is permitted because of the following sub-derivation:
+
+exp0 
+exp1 
+exp2 
+exp3 
+exp4 
+exp5 exp5 
+exp CONS exp5 // lookahead token appears
+MATCH exp WITH LBRACKET RBRACKET ARROW exp BAR IDENT CONS IDENT ARROW exp . 
+
+** In state 91, looking ahead at CONS, shifting is permitted
+** because of the following sub-derivation:
+
+MATCH exp WITH LBRACKET RBRACKET ARROW exp BAR IDENT CONS IDENT ARROW exp 
+                                                                      exp0 
+                                                                      exp1 
+                                                                      exp2 
+                                                                      exp3 
+                                                                      exp4 
+                                                                      exp5 exp5 
+                                                                      exp . CONS exp5 
+
+** Conflict (shift/reduce) in state 81.
+** Token involved: CONS
+** This state is reached from parse after reading:
+
+MATCH exp WITH LPAREN IDENT COMMA IDENT RPAREN ARROW exp
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+(?)
+
+** In state 81, looking ahead at CONS, reducing production
+** exp -> MATCH exp WITH LPAREN IDENT COMMA IDENT RPAREN ARROW exp
+** is permitted because of the following sub-derivation:
+
+exp0 
+exp1 
+exp2 
+exp3 
+exp4 
+exp5 exp5 
+exp CONS exp5 // lookahead token appears
+MATCH exp WITH LPAREN IDENT COMMA IDENT RPAREN ARROW exp . 
+
+** In state 81, looking ahead at CONS, shifting is permitted
+** because of the following sub-derivation:
+
+MATCH exp WITH LPAREN IDENT COMMA IDENT RPAREN ARROW exp 
+                                                     exp0 
+                                                     exp1 
+                                                     exp2 
+                                                     exp3 
+                                                     exp4 
+                                                     exp5 exp5 
+                                                     exp . CONS exp5 
+
+** Conflict (shift/reduce) in state 67.
+** Token involved: CONS
+** This state is reached from parse after reading:
+
+LET IDENT EQ exp IN exp
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+(?)
+
+** In state 67, looking ahead at CONS, reducing production
+** exp -> LET IDENT EQ exp IN exp
+** is permitted because of the following sub-derivation:
+
+exp0 
+exp1 
+exp2 
+exp3 
+exp4 
+exp5 exp5 
+exp CONS exp5 // lookahead token appears
+LET IDENT EQ exp IN exp . 
+
+** In state 67, looking ahead at CONS, shifting is permitted
+** because of the following sub-derivation:
+
+LET IDENT EQ exp IN exp 
+                    exp0 
+                    exp1 
+                    exp2 
+                    exp3 
+                    exp4 
+                    exp5 exp5 
+                    exp . CONS exp5 
+
+** Conflict (shift/reduce) in state 62.
+** Token involved: CONS
+** This state is reached from parse after reading:
+
+LET REC IDENT IDENT EQ exp IN exp
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+(?)
+
+** In state 62, looking ahead at CONS, reducing production
+** exp -> LET REC IDENT IDENT EQ exp IN exp
+** is permitted because of the following sub-derivation:
+
+exp0 
+exp1 
+exp2 
+exp3 
+exp4 
+exp5 exp5 
+exp CONS exp5 // lookahead token appears
+LET REC IDENT IDENT EQ exp IN exp . 
+
+** In state 62, looking ahead at CONS, shifting is permitted
+** because of the following sub-derivation:
+
+LET REC IDENT IDENT EQ exp IN exp 
+                              exp0 
+                              exp1 
+                              exp2 
+                              exp3 
+                              exp4 
+                              exp5 exp5 
+                              exp . CONS exp5 
+
+** Conflict (shift/reduce) in state 59.
+** Token involved: CONS
+** This state is reached from parse after reading:
+
+IF exp THEN exp ELSE exp
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+(?)
+
+** In state 59, looking ahead at CONS, reducing production
+** exp -> IF exp THEN exp ELSE exp
+** is permitted because of the following sub-derivation:
+
+exp0 
+exp1 
+exp2 
+exp3 
+exp4 
+exp5 exp5 
+exp CONS exp5 // lookahead token appears
+IF exp THEN exp ELSE exp . 
+
+** In state 59, looking ahead at CONS, shifting is permitted
+** because of the following sub-derivation:
+
+IF exp THEN exp ELSE exp 
+                     exp0 
+                     exp1 
+                     exp2 
+                     exp3 
+                     exp4 
+                     exp5 exp5 
+                     exp . CONS exp5 
+
+** Conflict (shift/reduce) in state 54.
+** Token involved: CONS
+** This state is reached from parse after reading:
+
+FUN IDENT ARROW exp
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+(?)
+
+** In state 54, looking ahead at CONS, reducing production
+** exp -> FUN IDENT ARROW exp
+** is permitted because of the following sub-derivation:
+
+exp0 
+exp1 
+exp2 
+exp3 
+exp4 
+exp5 exp5 
+exp CONS exp5 // lookahead token appears
+FUN IDENT ARROW exp . 
+
+** In state 54, looking ahead at CONS, shifting is permitted
+** because of the following sub-derivation:
+
+FUN IDENT ARROW exp 
+                exp0 
+                exp1 
+                exp2 
+                exp3 
+                exp4 
+                exp5 exp5 
+                exp . CONS exp5 
+
+** Conflict (reduce/reduce) in state 53.
+** Tokens involved: NEQ LT LEQ GT GEQ EQ CONS
+** The following explanations concentrate on token NEQ.
+** This state is reached from parse after reading:
+
+exp0 EQ exp1
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+(?)
+
+** In state 53, looking ahead at NEQ, reducing production
+** exp0 -> exp0 EQ exp1
+** is permitted because of the following sub-derivation:
+
+exp0 NEQ exp1 // lookahead token appears
+exp0 EQ exp1 . 
+
+** In state 53, looking ahead at NEQ, reducing production
+** exp0 -> exp1
+** is permitted because of the following sub-derivation:
+
+exp0 EQ exp1 
+        exp2 
+        exp3 
+        exp4 
+        exp5 exp5 
+        exp CONS exp5 
+        exp0 
+        exp0 NEQ exp1 // lookahead token appears
+        exp1 . 
+
+** Conflict (reduce/reduce) in state 51.
+** Tokens involved: NEQ LT LEQ GT GEQ EQ CONS
+** The following explanations concentrate on token NEQ.
+** This state is reached from parse after reading:
+
+exp0 GEQ exp1
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+(?)
+
+** In state 51, looking ahead at NEQ, reducing production
+** exp0 -> exp0 GEQ exp1
+** is permitted because of the following sub-derivation:
+
+exp0 NEQ exp1 // lookahead token appears
+exp0 GEQ exp1 . 
+
+** In state 51, looking ahead at NEQ, reducing production
+** exp0 -> exp1
+** is permitted because of the following sub-derivation:
+
+exp0 GEQ exp1 
+         exp2 
+         exp3 
+         exp4 
+         exp5 exp5 
+         exp CONS exp5 
+         exp0 
+         exp0 NEQ exp1 // lookahead token appears
+         exp1 . 
+
+** Conflict (reduce/reduce) in state 49.
+** Tokens involved: NEQ LT LEQ GT GEQ EQ CONS
+** The following explanations concentrate on token NEQ.
+** This state is reached from parse after reading:
+
+exp0 GT exp1
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+(?)
+
+** In state 49, looking ahead at NEQ, reducing production
+** exp0 -> exp0 GT exp1
+** is permitted because of the following sub-derivation:
+
+exp0 NEQ exp1 // lookahead token appears
+exp0 GT exp1 . 
+
+** In state 49, looking ahead at NEQ, reducing production
+** exp0 -> exp1
+** is permitted because of the following sub-derivation:
+
+exp0 GT exp1 
+        exp2 
+        exp3 
+        exp4 
+        exp5 exp5 
+        exp CONS exp5 
+        exp0 
+        exp0 NEQ exp1 // lookahead token appears
+        exp1 . 
+
+** Conflict (reduce/reduce) in state 47.
+** Tokens involved: NEQ LT LEQ GT GEQ EQ CONS
+** The following explanations concentrate on token NEQ.
+** This state is reached from parse after reading:
+
+exp0 LEQ exp1
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+(?)
+
+** In state 47, looking ahead at NEQ, reducing production
+** exp0 -> exp0 LEQ exp1
+** is permitted because of the following sub-derivation:
+
+exp0 NEQ exp1 // lookahead token appears
+exp0 LEQ exp1 . 
+
+** In state 47, looking ahead at NEQ, reducing production
+** exp0 -> exp1
+** is permitted because of the following sub-derivation:
+
+exp0 LEQ exp1 
+         exp2 
+         exp3 
+         exp4 
+         exp5 exp5 
+         exp CONS exp5 
+         exp0 
+         exp0 NEQ exp1 // lookahead token appears
+         exp1 . 
+
+** Conflict (reduce/reduce) in state 45.
+** Tokens involved: NEQ LT LEQ GT GEQ EQ CONS
+** The following explanations concentrate on token NEQ.
+** This state is reached from parse after reading:
+
+exp0 LT exp1
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+(?)
+
+** In state 45, looking ahead at NEQ, reducing production
+** exp0 -> exp0 LT exp1
+** is permitted because of the following sub-derivation:
+
+exp0 NEQ exp1 // lookahead token appears
+exp0 LT exp1 . 
+
+** In state 45, looking ahead at NEQ, reducing production
+** exp0 -> exp1
+** is permitted because of the following sub-derivation:
+
+exp0 LT exp1 
+        exp2 
+        exp3 
+        exp4 
+        exp5 exp5 
+        exp CONS exp5 
+        exp0 
+        exp0 NEQ exp1 // lookahead token appears
+        exp1 . 
+
+** Conflict (shift/reduce) in state 43.
+** Tokens involved: UNIT TIMES PLUS OR NOT NEQ MINUS MATCH LT LPAREN LET LEQ LBRACKET INT IF IDENT GT GEQ FUN EQ DIV CONS BOOL AND
+** The following explanations concentrate on token UNIT.
+** This state is reached from parse after reading:
+
+exp CONS exp5
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+exp1 
+exp2 
+exp3 
+exp4 
+(?)
+
+** In state 43, looking ahead at UNIT, shifting is permitted
+** because of the following sub-derivation:
+
+exp5 exp5 
+exp CONS exp5 
+         exp CONS exp5 
+         exp0 
+         exp1 
+         exp2 
+         exp3 
+         exp4 
+         exp5 exp5 
+              . UNIT 
+
+** In state 43, looking ahead at UNIT, reducing production
+** exp5 -> exp CONS exp5
+** is permitted because of the following sub-derivation:
+
+exp5 exp5 // lookahead token appears because exp5 can begin with UNIT
+exp CONS exp5 . 
+
+** Conflict (reduce/reduce) in state 40.
+** Tokens involved: OR NEQ LT LEQ GT GEQ EQ CONS AND
+** The following explanations concentrate on token OR.
+** This state is reached from parse after reading:
+
+exp1 AND exp2
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+exp1 
+(?)
+
+** In state 40, looking ahead at OR, reducing production
+** exp1 -> exp1 AND exp2
+** is permitted because of the following sub-derivation:
+
+exp1 OR exp2 // lookahead token appears
+exp1 AND exp2 . 
+
+** In state 40, looking ahead at OR, reducing production
+** exp1 -> exp2
+** is permitted because of the following sub-derivation:
+
+exp1 AND exp2 
+         exp3 
+         exp4 
+         exp5 exp5 
+         exp CONS exp5 
+         exp0 
+         exp1 
+         exp1 OR exp2 // lookahead token appears
+         exp2 . 
+
+** Conflict (reduce/reduce) in state 38.
+** Tokens involved: NEQ LT LEQ GT GEQ EQ CONS
+** The following explanations concentrate on token NEQ.
+** This state is reached from parse after reading:
+
+exp0 NEQ exp1
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+(?)
+
+** In state 38, looking ahead at NEQ, reducing production
+** exp0 -> exp0 NEQ exp1
+** is permitted because of the following sub-derivation:
+
+exp0 NEQ exp1 // lookahead token appears
+exp0 NEQ exp1 . 
+
+** In state 38, looking ahead at NEQ, reducing production
+** exp0 -> exp1
+** is permitted because of the following sub-derivation:
+
+exp0 NEQ exp1 
+         exp2 
+         exp3 
+         exp4 
+         exp5 exp5 
+         exp CONS exp5 
+         exp0 
+         exp0 NEQ exp1 // lookahead token appears
+         exp1 . 
+
+** Conflict (reduce/reduce) in state 35.
+** Tokens involved: PLUS OR NEQ MINUS LT LEQ GT GEQ EQ CONS AND
+** The following explanations concentrate on token PLUS.
+** This state is reached from parse after reading:
+
+exp2 MINUS exp3
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+exp1 
+exp2 
+(?)
+
+** In state 35, looking ahead at PLUS, reducing production
+** exp2 -> exp2 MINUS exp3
+** is permitted because of the following sub-derivation:
+
+exp2 PLUS exp3 // lookahead token appears
+exp2 MINUS exp3 . 
+
+** In state 35, looking ahead at PLUS, reducing production
+** exp2 -> exp3
+** is permitted because of the following sub-derivation:
+
+exp2 MINUS exp3 
+           exp4 
+           exp5 exp5 
+           exp CONS exp5 
+           exp0 
+           exp1 
+           exp2 
+           exp2 PLUS exp3 // lookahead token appears
+           exp3 . 
+
+** Conflict (reduce/reduce) in state 33.
+** Tokens involved: OR NEQ LT LEQ GT GEQ EQ CONS AND
+** The following explanations concentrate on token OR.
+** This state is reached from parse after reading:
+
+exp1 OR exp2
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+exp1 
+(?)
+
+** In state 33, looking ahead at OR, reducing production
+** exp1 -> exp1 OR exp2
+** is permitted because of the following sub-derivation:
+
+exp1 OR exp2 // lookahead token appears
+exp1 OR exp2 . 
+
+** In state 33, looking ahead at OR, reducing production
+** exp1 -> exp2
+** is permitted because of the following sub-derivation:
+
+exp1 OR exp2 
+        exp3 
+        exp4 
+        exp5 exp5 
+        exp CONS exp5 
+        exp0 
+        exp1 
+        exp1 OR exp2 // lookahead token appears
+        exp2 . 
+
+** Conflict (reduce/reduce) in state 30.
+** Tokens involved: TIMES PLUS OR NEQ MINUS LT LEQ GT GEQ EQ DIV CONS AND
+** The following explanations concentrate on token TIMES.
+** This state is reached from parse after reading:
+
+exp3 DIV exp4
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+exp1 
+exp2 
+exp3 
+(?)
+
+** In state 30, looking ahead at TIMES, reducing production
+** exp3 -> exp3 DIV exp4
+** is permitted because of the following sub-derivation:
+
+exp3 TIMES exp4 // lookahead token appears
+exp3 DIV exp4 . 
+
+** In state 30, looking ahead at TIMES, reducing production
+** exp3 -> exp4
+** is permitted because of the following sub-derivation:
+
+exp3 DIV exp4 
+         exp5 exp5 
+         exp CONS exp5 
+         exp0 
+         exp1 
+         exp2 
+         exp3 
+         exp3 TIMES exp4 // lookahead token appears
+         exp4 . 
+
+** Conflict (reduce/reduce) in state 28.
+** Tokens involved: PLUS OR NEQ MINUS LT LEQ GT GEQ EQ CONS AND
+** The following explanations concentrate on token PLUS.
+** This state is reached from parse after reading:
+
+exp2 PLUS exp3
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+exp1 
+exp2 
+(?)
+
+** In state 28, looking ahead at PLUS, reducing production
+** exp2 -> exp2 PLUS exp3
+** is permitted because of the following sub-derivation:
+
+exp2 PLUS exp3 // lookahead token appears
+exp2 PLUS exp3 . 
+
+** In state 28, looking ahead at PLUS, reducing production
+** exp2 -> exp3
+** is permitted because of the following sub-derivation:
+
+exp2 PLUS exp3 
+          exp4 
+          exp5 exp5 
+          exp CONS exp5 
+          exp0 
+          exp1 
+          exp2 
+          exp2 PLUS exp3 // lookahead token appears
+          exp3 . 
+
+** Conflict (reduce/reduce) in state 25.
+** Tokens involved: TIMES PLUS OR NEQ MINUS LT LEQ GT GEQ EQ DIV CONS AND
+** The following explanations concentrate on token TIMES.
+** This state is reached from parse after reading:
+
+exp3 TIMES exp4
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+exp1 
+exp2 
+exp3 
+(?)
+
+** In state 25, looking ahead at TIMES, reducing production
+** exp3 -> exp3 TIMES exp4
+** is permitted because of the following sub-derivation:
+
+exp3 TIMES exp4 // lookahead token appears
+exp3 TIMES exp4 . 
+
+** In state 25, looking ahead at TIMES, reducing production
+** exp3 -> exp4
+** is permitted because of the following sub-derivation:
+
+exp3 TIMES exp4 
+           exp5 exp5 
+           exp CONS exp5 
+           exp0 
+           exp1 
+           exp2 
+           exp3 
+           exp3 TIMES exp4 // lookahead token appears
+           exp4 . 
+
+** Conflict (shift/reduce/reduce) in state 21.
+** Tokens involved: TIMES PLUS OR NEQ MINUS LT LEQ GT GEQ EQ DIV CONS AND
+** The following explanations concentrate on token MINUS.
+** This state is reached from parse after reading:
+
+exp5 exp5
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+exp1 
+exp2 
+(?)
+
+** In state 21, looking ahead at MINUS, reducing production
+** exp4 -> exp5 exp5
+** is permitted because of the following sub-derivation:
+
+exp2 MINUS exp3 // lookahead token appears
+exp3 // lookahead token is inherited
+exp4 // lookahead token is inherited
+exp5 exp5 . 
+
+** In state 21, looking ahead at MINUS, reducing production
+** exp4 -> exp5
+** is permitted because of the following sub-derivation:
+
+exp3 
+exp4 
+exp5 exp5 
+     exp CONS exp5 
+     exp0 
+     exp1 
+     exp2 
+     exp2 MINUS exp3 // lookahead token appears
+     exp3 // lookahead token is inherited
+     exp4 // lookahead token is inherited
+     exp5 . 
+
+** In state 21, looking ahead at MINUS, shifting is permitted
+** because of the following sub-derivation:
+
+exp3 
+exp4 
+exp5 exp5 
+     exp CONS exp5 
+     exp0 
+     exp1 
+     exp2 
+     exp3 
+     exp4 
+     exp5 exp5 
+          . MINUS exp5 
+
+** Conflict (shift/reduce) in state 20.
+** Token involved: MINUS
+** This state is reached from parse after reading:
+
+exp5
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+parse 
+exp EOF 
+exp0 
+exp1 
+exp2 
+(?)
+
+** In state 20, looking ahead at MINUS, reducing production
+** exp4 -> exp5
+** is permitted because of the following sub-derivation:
+
+exp2 MINUS exp3 // lookahead token appears
+exp3 // lookahead token is inherited
+exp4 // lookahead token is inherited
+exp5 . 
+
+** In state 20, looking ahead at MINUS, shifting is permitted
+** because of the following sub-derivation:
+
+exp3 
+exp4 
+exp5 exp5 
+     . MINUS exp5 
