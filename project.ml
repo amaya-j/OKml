@@ -1,12 +1,4 @@
-
-   * Exp      – AST                        (Person A)
-   * Lexer    – hand‑written tokenizer      (Person A)
-   * Parser   – recursive‑descent + prec.   (Person A)
-   * TC       – monomorphic type checker    (Person B)
-   * EV       – evaluator + constProp opt.  (Person C)
-   * Demo / tiny CLI with assertion tests 
-
-
+(*Not for submitting, refer to some cases and extract files properly when merging*)
 open Printf
 
 (* ───────────────────────────── Exp ─────────────────────────────── *)
