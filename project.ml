@@ -1,14 +1,11 @@
 
-(* *******************************************************************
-   OKml – single‑file implementation for OneCompiler  (fixed version)
-   ------------------------------------------------------------------
    * Exp      – AST                        (Person A)
    * Lexer    – hand‑written tokenizer      (Person A)
    * Parser   – recursive‑descent + prec.   (Person A)
    * TC       – monomorphic type checker    (Person B)
    * EV       – evaluator + constProp opt.  (Person C)
-   * Demo / tiny CLI with assertion tests
-   *******************************************************************)
+   * Demo / tiny CLI with assertion tests 
+
 
 open Printf
 
@@ -432,4 +429,4 @@ let () =
   print_endline "Extra tests passed!"
 
 
-(*2nd draft Searching funtionc, checks, test cases A I*)
+(*2nd draft Searching funtionc, checks, test cases, etc A I*)
