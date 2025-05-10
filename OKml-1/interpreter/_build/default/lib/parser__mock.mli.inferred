@@ -1,0 +1,48 @@
+type token =
+    WITH
+  | UNIT
+  | TIMES
+  | THEN
+  | RPAREN
+  | REC
+  | RBRACKET
+  | PLUS
+  | OR
+  | NOT
+  | NEQ
+  | MINUS
+  | MATCH
+  | LT
+  | LPAREN
+  | LET
+  | LEQ
+  | LBRACKET
+  | INT of int
+  | IN
+  | IF
+  | IDENT of string
+  | GT
+  | GEQ
+  | FUN
+  | EQ
+  | EOF
+  | ELSE
+  | DIV
+  | CONS
+  | COMMA
+  | BOOL of bool
+  | BAR
+  | ARROW
+  | AND
+val menhir_begin_marker : int
+val xv_parse : Exp.ast
+val xv_exp7 : Exp.ast
+val xv_exp6 : Exp.ast
+val xv_exp5 : Exp.ast
+val xv_exp4 : Exp.ast
+val xv_exp3 : Exp.ast
+val xv_exp2 : Exp.ast
+val xv_exp1 : Exp.ast
+val xv_exp0 : Exp.ast
+val xv_comparator : Exp.binOp
+val menhir_end_marker : int

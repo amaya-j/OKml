@@ -1,0 +1,21 @@
+# dune build
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /Users/evan/.cache/dune/db
+# Workspace root: /Users/evan/Downloads/OKml-1/interpreter
+# Auto-detected concurrency: 8
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /Users/evan/.opam/default/bin/ocamlc.opt -config > /var/folders/cr/s_nvjrsx7152f7my828n3p640000gn/T/dune_e78521_output
+$ (cd _build/.sandbox/4e1b06184b107c1c5a74d0fdc1397580/default && /Users/evan/.opam/default/bin/menhir lib/parser.mly --base lib/parser --infer-write-query lib/parser__mock.ml.mock)
+> File "lib/parser.mly", line 32, characters 32-56:
+> Error: syntax error after 'cons_expr' and before '{ BinOp (Cons, hd, tl) }'.
+> A semicolon ';' is expected at this point.
+[1]

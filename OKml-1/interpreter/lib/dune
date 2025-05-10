@@ -1,0 +1,8 @@
+(library
+ (name interpreter)
+ (modules lexer exp parser type typechecker opt eval)) ;
+
+(ocamllex (modules lexer))
+
+(menhir
+ (modules parser))

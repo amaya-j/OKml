@@ -1,0 +1,1332 @@
+State 0:
+## Known stack suffix:
+##
+## LR(1) items:
+parse' -> . parse [ # ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On MATCH shift to state 5
+-- On LPAREN shift to state 4
+-- On LET shift to state 46
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IF shift to state 51
+-- On IDENT shift to state 9
+-- On FUN shift to state 54
+-- On BOOL shift to state 10
+-- On parse shift to state 90
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 57
+-- On exp0 shift to state 91
+## Reductions:
+
+State 1:
+## Known stack suffix:
+## UNIT
+## LR(1) items:
+exp7 -> UNIT . [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+## Reductions:
+-- On WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND
+--   reduce production exp7 -> UNIT
+
+State 2:
+## Known stack suffix:
+## NOT
+## LR(1) items:
+exp6 -> NOT . exp6 [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On LPAREN shift to state 4
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IDENT shift to state 9
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 89
+## Reductions:
+
+State 3:
+## Known stack suffix:
+## MINUS
+## LR(1) items:
+exp6 -> MINUS . exp6 [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On LPAREN shift to state 4
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IDENT shift to state 9
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 88
+## Reductions:
+
+State 4:
+## Known stack suffix:
+## LPAREN
+## LR(1) items:
+exp7 -> LPAREN . exp0 RPAREN [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+exp7 -> LPAREN . exp0 COMMA exp0 RPAREN [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On MATCH shift to state 5
+-- On LPAREN shift to state 4
+-- On LET shift to state 46
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IF shift to state 51
+-- On IDENT shift to state 9
+-- On FUN shift to state 54
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 57
+-- On exp0 shift to state 83
+## Reductions:
+
+State 5:
+## Known stack suffix:
+## MATCH
+## LR(1) items:
+exp0 -> MATCH . exp1 WITH LPAREN IDENT COMMA IDENT RPAREN ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+exp0 -> MATCH . exp1 WITH LBRACKET RBRACKET ARROW exp0 BAR IDENT CONS IDENT ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On LPAREN shift to state 4
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IDENT shift to state 9
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 38
+## Reductions:
+
+State 6:
+## Known stack suffix:
+## LBRACKET
+## LR(1) items:
+exp7 -> LBRACKET . RBRACKET [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+-- On RBRACKET shift to state 7
+## Reductions:
+
+State 7:
+## Known stack suffix:
+## LBRACKET RBRACKET
+## LR(1) items:
+exp7 -> LBRACKET RBRACKET . [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+## Reductions:
+-- On WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND
+--   reduce production exp7 -> LBRACKET RBRACKET
+
+State 8:
+## Known stack suffix:
+## INT
+## LR(1) items:
+exp7 -> INT . [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+## Reductions:
+-- On WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND
+--   reduce production exp7 -> INT
+
+State 9:
+## Known stack suffix:
+## IDENT
+## LR(1) items:
+exp7 -> IDENT . [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+## Reductions:
+-- On WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND
+--   reduce production exp7 -> IDENT
+
+State 10:
+## Known stack suffix:
+## BOOL
+## LR(1) items:
+exp7 -> BOOL . [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+## Reductions:
+-- On WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND
+--   reduce production exp7 -> BOOL
+
+State 11:
+## Known stack suffix:
+## exp7
+## LR(1) items:
+exp6 -> exp7 . [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+## Reductions:
+-- On WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND
+--   reduce production exp6 -> exp7
+
+State 12:
+## Known stack suffix:
+## exp6
+## LR(1) items:
+exp5 -> exp6 . exp5 [ WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND ]
+exp5 -> exp6 . [ WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On LPAREN shift to state 4
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IDENT shift to state 9
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 13
+## Reductions:
+-- On WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND
+--   reduce production exp5 -> exp6
+** Conflict on MINUS
+
+State 13:
+## Known stack suffix:
+## exp6 exp5
+## LR(1) items:
+exp5 -> exp6 exp5 . [ WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND ]
+## Transitions:
+## Reductions:
+-- On WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND
+--   reduce production exp5 -> exp6 exp5
+
+State 14:
+## Known stack suffix:
+## exp5
+## LR(1) items:
+exp4 -> exp5 . [ WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND ]
+## Transitions:
+## Reductions:
+-- On WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND
+--   reduce production exp4 -> exp5
+
+State 15:
+## Known stack suffix:
+## exp4
+## LR(1) items:
+exp3 -> exp4 . [ WITH THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+exp4 -> exp4 . TIMES exp5 [ WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND ]
+exp4 -> exp4 . DIV exp5 [ WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND ]
+## Transitions:
+-- On TIMES shift to state 16
+-- On DIV shift to state 18
+## Reductions:
+-- On WITH THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND
+--   reduce production exp3 -> exp4
+
+State 16:
+## Known stack suffix:
+## exp4 TIMES
+## LR(1) items:
+exp4 -> exp4 TIMES . exp5 [ WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On LPAREN shift to state 4
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IDENT shift to state 9
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 17
+## Reductions:
+
+State 17:
+## Known stack suffix:
+## exp4 TIMES exp5
+## LR(1) items:
+exp4 -> exp4 TIMES exp5 . [ WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND ]
+## Transitions:
+## Reductions:
+-- On WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND
+--   reduce production exp4 -> exp4 TIMES exp5
+
+State 18:
+## Known stack suffix:
+## exp4 DIV
+## LR(1) items:
+exp4 -> exp4 DIV . exp5 [ WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On LPAREN shift to state 4
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IDENT shift to state 9
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 19
+## Reductions:
+
+State 19:
+## Known stack suffix:
+## exp4 DIV exp5
+## LR(1) items:
+exp4 -> exp4 DIV exp5 . [ WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND ]
+## Transitions:
+## Reductions:
+-- On WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND
+--   reduce production exp4 -> exp4 DIV exp5
+
+State 20:
+## Known stack suffix:
+## exp3
+## LR(1) items:
+exp2 -> exp3 . [ WITH THEN RPAREN OR NEQ LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+exp3 -> exp3 . PLUS exp4 [ WITH THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+exp3 -> exp3 . MINUS exp4 [ WITH THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+## Transitions:
+-- On PLUS shift to state 21
+-- On MINUS shift to state 23
+## Reductions:
+-- On WITH THEN RPAREN OR NEQ LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND
+--   reduce production exp2 -> exp3
+
+State 21:
+## Known stack suffix:
+## exp3 PLUS
+## LR(1) items:
+exp3 -> exp3 PLUS . exp4 [ WITH THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On LPAREN shift to state 4
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IDENT shift to state 9
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 22
+## Reductions:
+
+State 22:
+## Known stack suffix:
+## exp3 PLUS exp4
+## LR(1) items:
+exp3 -> exp3 PLUS exp4 . [ WITH THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+exp4 -> exp4 . TIMES exp5 [ WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND ]
+exp4 -> exp4 . DIV exp5 [ WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND ]
+## Transitions:
+-- On TIMES shift to state 16
+-- On DIV shift to state 18
+## Reductions:
+-- On WITH THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND
+--   reduce production exp3 -> exp3 PLUS exp4
+
+State 23:
+## Known stack suffix:
+## exp3 MINUS
+## LR(1) items:
+exp3 -> exp3 MINUS . exp4 [ WITH THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On LPAREN shift to state 4
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IDENT shift to state 9
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 24
+## Reductions:
+
+State 24:
+## Known stack suffix:
+## exp3 MINUS exp4
+## LR(1) items:
+exp3 -> exp3 MINUS exp4 . [ WITH THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+exp4 -> exp4 . TIMES exp5 [ WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND ]
+exp4 -> exp4 . DIV exp5 [ WITH TIMES THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE DIV CONS COMMA BAR AND ]
+## Transitions:
+-- On TIMES shift to state 16
+-- On DIV shift to state 18
+## Reductions:
+-- On WITH THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND
+--   reduce production exp3 -> exp3 MINUS exp4
+
+State 25:
+## Known stack suffix:
+## exp2
+## LR(1) items:
+exp1 -> exp2 . comparator exp2 [ WITH THEN RPAREN IN EOF ELSE CONS COMMA BAR ]
+exp1 -> exp2 . [ WITH THEN RPAREN IN EOF ELSE CONS COMMA BAR ]
+exp2 -> exp2 . AND exp3 [ WITH THEN RPAREN OR NEQ LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+exp2 -> exp2 . OR exp3 [ WITH THEN RPAREN OR NEQ LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+## Transitions:
+-- On OR shift to state 26
+-- On NEQ shift to state 28
+-- On LT shift to state 29
+-- On LEQ shift to state 30
+-- On GT shift to state 31
+-- On GEQ shift to state 32
+-- On EQ shift to state 33
+-- On AND shift to state 34
+-- On comparator shift to state 36
+## Reductions:
+-- On WITH THEN RPAREN IN EOF ELSE CONS COMMA BAR
+--   reduce production exp1 -> exp2
+
+State 26:
+## Known stack suffix:
+## exp2 OR
+## LR(1) items:
+exp2 -> exp2 OR . exp3 [ WITH THEN RPAREN OR NEQ LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On LPAREN shift to state 4
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IDENT shift to state 9
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 27
+## Reductions:
+
+State 27:
+## Known stack suffix:
+## exp2 OR exp3
+## LR(1) items:
+exp2 -> exp2 OR exp3 . [ WITH THEN RPAREN OR NEQ LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+exp3 -> exp3 . PLUS exp4 [ WITH THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+exp3 -> exp3 . MINUS exp4 [ WITH THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+## Transitions:
+-- On PLUS shift to state 21
+-- On MINUS shift to state 23
+## Reductions:
+-- On WITH THEN RPAREN OR NEQ LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND
+--   reduce production exp2 -> exp2 OR exp3
+
+State 28:
+## Known stack suffix:
+## NEQ
+## LR(1) items:
+comparator -> NEQ . [ UNIT NOT MINUS LPAREN LBRACKET INT IDENT BOOL ]
+## Transitions:
+## Reductions:
+-- On UNIT NOT MINUS LPAREN LBRACKET INT IDENT BOOL
+--   reduce production comparator -> NEQ
+
+State 29:
+## Known stack suffix:
+## LT
+## LR(1) items:
+comparator -> LT . [ UNIT NOT MINUS LPAREN LBRACKET INT IDENT BOOL ]
+## Transitions:
+## Reductions:
+-- On UNIT NOT MINUS LPAREN LBRACKET INT IDENT BOOL
+--   reduce production comparator -> LT
+
+State 30:
+## Known stack suffix:
+## LEQ
+## LR(1) items:
+comparator -> LEQ . [ UNIT NOT MINUS LPAREN LBRACKET INT IDENT BOOL ]
+## Transitions:
+## Reductions:
+-- On UNIT NOT MINUS LPAREN LBRACKET INT IDENT BOOL
+--   reduce production comparator -> LEQ
+
+State 31:
+## Known stack suffix:
+## GT
+## LR(1) items:
+comparator -> GT . [ UNIT NOT MINUS LPAREN LBRACKET INT IDENT BOOL ]
+## Transitions:
+## Reductions:
+-- On UNIT NOT MINUS LPAREN LBRACKET INT IDENT BOOL
+--   reduce production comparator -> GT
+
+State 32:
+## Known stack suffix:
+## GEQ
+## LR(1) items:
+comparator -> GEQ . [ UNIT NOT MINUS LPAREN LBRACKET INT IDENT BOOL ]
+## Transitions:
+## Reductions:
+-- On UNIT NOT MINUS LPAREN LBRACKET INT IDENT BOOL
+--   reduce production comparator -> GEQ
+
+State 33:
+## Known stack suffix:
+## EQ
+## LR(1) items:
+comparator -> EQ . [ UNIT NOT MINUS LPAREN LBRACKET INT IDENT BOOL ]
+## Transitions:
+## Reductions:
+-- On UNIT NOT MINUS LPAREN LBRACKET INT IDENT BOOL
+--   reduce production comparator -> EQ
+
+State 34:
+## Known stack suffix:
+## exp2 AND
+## LR(1) items:
+exp2 -> exp2 AND . exp3 [ WITH THEN RPAREN OR NEQ LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On LPAREN shift to state 4
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IDENT shift to state 9
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 35
+## Reductions:
+
+State 35:
+## Known stack suffix:
+## exp2 AND exp3
+## LR(1) items:
+exp2 -> exp2 AND exp3 . [ WITH THEN RPAREN OR NEQ LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+exp3 -> exp3 . PLUS exp4 [ WITH THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+exp3 -> exp3 . MINUS exp4 [ WITH THEN RPAREN PLUS OR NEQ MINUS LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND ]
+## Transitions:
+-- On PLUS shift to state 21
+-- On MINUS shift to state 23
+## Reductions:
+-- On WITH THEN RPAREN OR NEQ LT LEQ IN GT GEQ EQ EOF ELSE CONS COMMA BAR AND
+--   reduce production exp2 -> exp2 AND exp3
+
+State 36:
+## Known stack suffix:
+## exp2 comparator
+## LR(1) items:
+exp1 -> exp2 comparator . exp2 [ WITH THEN RPAREN IN EOF ELSE CONS COMMA BAR ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On LPAREN shift to state 4
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IDENT shift to state 9
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 37
+## Reductions:
+
+State 37:
+## Known stack suffix:
+## exp2 comparator exp2
+## LR(1) items:
+exp1 -> exp2 comparator exp2 . [ WITH THEN RPAREN IN EOF ELSE CONS COMMA BAR ]
+exp2 -> exp2 . AND exp3 [ WITH THEN RPAREN OR IN EOF ELSE CONS COMMA BAR AND ]
+exp2 -> exp2 . OR exp3 [ WITH THEN RPAREN OR IN EOF ELSE CONS COMMA BAR AND ]
+## Transitions:
+-- On OR shift to state 26
+-- On AND shift to state 34
+## Reductions:
+-- On WITH THEN RPAREN IN EOF ELSE CONS COMMA BAR
+--   reduce production exp1 -> exp2 comparator exp2
+
+State 38:
+## Known stack suffix:
+## MATCH exp1
+## LR(1) items:
+exp0 -> MATCH exp1 . WITH LPAREN IDENT COMMA IDENT RPAREN ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+exp0 -> MATCH exp1 . WITH LBRACKET RBRACKET ARROW exp0 BAR IDENT CONS IDENT ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On WITH shift to state 39
+## Reductions:
+
+State 39:
+## Known stack suffix:
+## MATCH exp1 WITH
+## LR(1) items:
+exp0 -> MATCH exp1 WITH . LPAREN IDENT COMMA IDENT RPAREN ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+exp0 -> MATCH exp1 WITH . LBRACKET RBRACKET ARROW exp0 BAR IDENT CONS IDENT ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On LPAREN shift to state 40
+-- On LBRACKET shift to state 73
+## Reductions:
+
+State 40:
+## Known stack suffix:
+## MATCH exp1 WITH LPAREN
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LPAREN . IDENT COMMA IDENT RPAREN ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On IDENT shift to state 41
+## Reductions:
+
+State 41:
+## Known stack suffix:
+## MATCH exp1 WITH LPAREN IDENT
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LPAREN IDENT . COMMA IDENT RPAREN ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On COMMA shift to state 42
+## Reductions:
+
+State 42:
+## Known stack suffix:
+## MATCH exp1 WITH LPAREN IDENT COMMA
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LPAREN IDENT COMMA . IDENT RPAREN ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On IDENT shift to state 43
+## Reductions:
+
+State 43:
+## Known stack suffix:
+## MATCH exp1 WITH LPAREN IDENT COMMA IDENT
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LPAREN IDENT COMMA IDENT . RPAREN ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On RPAREN shift to state 44
+## Reductions:
+
+State 44:
+## Known stack suffix:
+## MATCH exp1 WITH LPAREN IDENT COMMA IDENT RPAREN
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LPAREN IDENT COMMA IDENT RPAREN . ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On ARROW shift to state 45
+## Reductions:
+
+State 45:
+## Known stack suffix:
+## MATCH exp1 WITH LPAREN IDENT COMMA IDENT RPAREN ARROW
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LPAREN IDENT COMMA IDENT RPAREN ARROW . exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On MATCH shift to state 5
+-- On LPAREN shift to state 4
+-- On LET shift to state 46
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IF shift to state 51
+-- On IDENT shift to state 9
+-- On FUN shift to state 54
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 57
+-- On exp0 shift to state 72
+## Reductions:
+
+State 46:
+## Known stack suffix:
+## LET
+## LR(1) items:
+exp0 -> LET . IDENT EQ exp0 IN exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+exp0 -> LET . REC IDENT IDENT EQ exp0 IN exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On REC shift to state 47
+-- On IDENT shift to state 67
+## Reductions:
+
+State 47:
+## Known stack suffix:
+## LET REC
+## LR(1) items:
+exp0 -> LET REC . IDENT IDENT EQ exp0 IN exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On IDENT shift to state 48
+## Reductions:
+
+State 48:
+## Known stack suffix:
+## LET REC IDENT
+## LR(1) items:
+exp0 -> LET REC IDENT . IDENT EQ exp0 IN exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On IDENT shift to state 49
+## Reductions:
+
+State 49:
+## Known stack suffix:
+## LET REC IDENT IDENT
+## LR(1) items:
+exp0 -> LET REC IDENT IDENT . EQ exp0 IN exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On EQ shift to state 50
+## Reductions:
+
+State 50:
+## Known stack suffix:
+## LET REC IDENT IDENT EQ
+## LR(1) items:
+exp0 -> LET REC IDENT IDENT EQ . exp0 IN exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On MATCH shift to state 5
+-- On LPAREN shift to state 4
+-- On LET shift to state 46
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IF shift to state 51
+-- On IDENT shift to state 9
+-- On FUN shift to state 54
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 57
+-- On exp0 shift to state 64
+## Reductions:
+
+State 51:
+## Known stack suffix:
+## IF
+## LR(1) items:
+exp0 -> IF . exp1 THEN exp0 ELSE exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On LPAREN shift to state 4
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IDENT shift to state 9
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 52
+## Reductions:
+
+State 52:
+## Known stack suffix:
+## IF exp1
+## LR(1) items:
+exp0 -> IF exp1 . THEN exp0 ELSE exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On THEN shift to state 53
+## Reductions:
+
+State 53:
+## Known stack suffix:
+## IF exp1 THEN
+## LR(1) items:
+exp0 -> IF exp1 THEN . exp0 ELSE exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On MATCH shift to state 5
+-- On LPAREN shift to state 4
+-- On LET shift to state 46
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IF shift to state 51
+-- On IDENT shift to state 9
+-- On FUN shift to state 54
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 57
+-- On exp0 shift to state 61
+## Reductions:
+
+State 54:
+## Known stack suffix:
+## FUN
+## LR(1) items:
+exp0 -> FUN . IDENT ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On IDENT shift to state 55
+## Reductions:
+
+State 55:
+## Known stack suffix:
+## FUN IDENT
+## LR(1) items:
+exp0 -> FUN IDENT . ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On ARROW shift to state 56
+## Reductions:
+
+State 56:
+## Known stack suffix:
+## FUN IDENT ARROW
+## LR(1) items:
+exp0 -> FUN IDENT ARROW . exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On MATCH shift to state 5
+-- On LPAREN shift to state 4
+-- On LET shift to state 46
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IF shift to state 51
+-- On IDENT shift to state 9
+-- On FUN shift to state 54
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 57
+-- On exp0 shift to state 60
+## Reductions:
+
+State 57:
+## Known stack suffix:
+## exp1
+## LR(1) items:
+exp0 -> exp1 . CONS exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+exp0 -> exp1 . [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On CONS shift to state 58
+## Reductions:
+-- On RPAREN IN EOF ELSE COMMA BAR
+--   reduce production exp0 -> exp1
+
+State 58:
+## Known stack suffix:
+## exp1 CONS
+## LR(1) items:
+exp0 -> exp1 CONS . exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On MATCH shift to state 5
+-- On LPAREN shift to state 4
+-- On LET shift to state 46
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IF shift to state 51
+-- On IDENT shift to state 9
+-- On FUN shift to state 54
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 57
+-- On exp0 shift to state 59
+## Reductions:
+
+State 59:
+## Known stack suffix:
+## exp1 CONS exp0
+## LR(1) items:
+exp0 -> exp1 CONS exp0 . [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+## Reductions:
+-- On RPAREN IN EOF ELSE COMMA BAR
+--   reduce production exp0 -> exp1 CONS exp0
+
+State 60:
+## Known stack suffix:
+## FUN IDENT ARROW exp0
+## LR(1) items:
+exp0 -> FUN IDENT ARROW exp0 . [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+## Reductions:
+-- On RPAREN IN EOF ELSE COMMA BAR
+--   reduce production exp0 -> FUN IDENT ARROW exp0
+
+State 61:
+## Known stack suffix:
+## IF exp1 THEN exp0
+## LR(1) items:
+exp0 -> IF exp1 THEN exp0 . ELSE exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On ELSE shift to state 62
+## Reductions:
+
+State 62:
+## Known stack suffix:
+## IF exp1 THEN exp0 ELSE
+## LR(1) items:
+exp0 -> IF exp1 THEN exp0 ELSE . exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On MATCH shift to state 5
+-- On LPAREN shift to state 4
+-- On LET shift to state 46
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IF shift to state 51
+-- On IDENT shift to state 9
+-- On FUN shift to state 54
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 57
+-- On exp0 shift to state 63
+## Reductions:
+
+State 63:
+## Known stack suffix:
+## IF exp1 THEN exp0 ELSE exp0
+## LR(1) items:
+exp0 -> IF exp1 THEN exp0 ELSE exp0 . [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+## Reductions:
+-- On RPAREN IN EOF ELSE COMMA BAR
+--   reduce production exp0 -> IF exp1 THEN exp0 ELSE exp0
+
+State 64:
+## Known stack suffix:
+## LET REC IDENT IDENT EQ exp0
+## LR(1) items:
+exp0 -> LET REC IDENT IDENT EQ exp0 . IN exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On IN shift to state 65
+## Reductions:
+
+State 65:
+## Known stack suffix:
+## LET REC IDENT IDENT EQ exp0 IN
+## LR(1) items:
+exp0 -> LET REC IDENT IDENT EQ exp0 IN . exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On MATCH shift to state 5
+-- On LPAREN shift to state 4
+-- On LET shift to state 46
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IF shift to state 51
+-- On IDENT shift to state 9
+-- On FUN shift to state 54
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 57
+-- On exp0 shift to state 66
+## Reductions:
+
+State 66:
+## Known stack suffix:
+## LET REC IDENT IDENT EQ exp0 IN exp0
+## LR(1) items:
+exp0 -> LET REC IDENT IDENT EQ exp0 IN exp0 . [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+## Reductions:
+-- On RPAREN IN EOF ELSE COMMA BAR
+--   reduce production exp0 -> LET REC IDENT IDENT EQ exp0 IN exp0
+
+State 67:
+## Known stack suffix:
+## LET IDENT
+## LR(1) items:
+exp0 -> LET IDENT . EQ exp0 IN exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On EQ shift to state 68
+## Reductions:
+
+State 68:
+## Known stack suffix:
+## LET IDENT EQ
+## LR(1) items:
+exp0 -> LET IDENT EQ . exp0 IN exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On MATCH shift to state 5
+-- On LPAREN shift to state 4
+-- On LET shift to state 46
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IF shift to state 51
+-- On IDENT shift to state 9
+-- On FUN shift to state 54
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 57
+-- On exp0 shift to state 69
+## Reductions:
+
+State 69:
+## Known stack suffix:
+## LET IDENT EQ exp0
+## LR(1) items:
+exp0 -> LET IDENT EQ exp0 . IN exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On IN shift to state 70
+## Reductions:
+
+State 70:
+## Known stack suffix:
+## LET IDENT EQ exp0 IN
+## LR(1) items:
+exp0 -> LET IDENT EQ exp0 IN . exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On MATCH shift to state 5
+-- On LPAREN shift to state 4
+-- On LET shift to state 46
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IF shift to state 51
+-- On IDENT shift to state 9
+-- On FUN shift to state 54
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 57
+-- On exp0 shift to state 71
+## Reductions:
+
+State 71:
+## Known stack suffix:
+## LET IDENT EQ exp0 IN exp0
+## LR(1) items:
+exp0 -> LET IDENT EQ exp0 IN exp0 . [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+## Reductions:
+-- On RPAREN IN EOF ELSE COMMA BAR
+--   reduce production exp0 -> LET IDENT EQ exp0 IN exp0
+
+State 72:
+## Known stack suffix:
+## MATCH exp1 WITH LPAREN IDENT COMMA IDENT RPAREN ARROW exp0
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LPAREN IDENT COMMA IDENT RPAREN ARROW exp0 . [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+## Reductions:
+-- On RPAREN IN EOF ELSE COMMA BAR
+--   reduce production exp0 -> MATCH exp1 WITH LPAREN IDENT COMMA IDENT RPAREN ARROW exp0
+
+State 73:
+## Known stack suffix:
+## MATCH exp1 WITH LBRACKET
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LBRACKET . RBRACKET ARROW exp0 BAR IDENT CONS IDENT ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On RBRACKET shift to state 74
+## Reductions:
+
+State 74:
+## Known stack suffix:
+## MATCH exp1 WITH LBRACKET RBRACKET
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LBRACKET RBRACKET . ARROW exp0 BAR IDENT CONS IDENT ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On ARROW shift to state 75
+## Reductions:
+
+State 75:
+## Known stack suffix:
+## MATCH exp1 WITH LBRACKET RBRACKET ARROW
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LBRACKET RBRACKET ARROW . exp0 BAR IDENT CONS IDENT ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On MATCH shift to state 5
+-- On LPAREN shift to state 4
+-- On LET shift to state 46
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IF shift to state 51
+-- On IDENT shift to state 9
+-- On FUN shift to state 54
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 57
+-- On exp0 shift to state 76
+## Reductions:
+
+State 76:
+## Known stack suffix:
+## MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0 . BAR IDENT CONS IDENT ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On BAR shift to state 77
+## Reductions:
+
+State 77:
+## Known stack suffix:
+## MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0 BAR
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0 BAR . IDENT CONS IDENT ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On IDENT shift to state 78
+## Reductions:
+
+State 78:
+## Known stack suffix:
+## MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0 BAR IDENT
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0 BAR IDENT . CONS IDENT ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On CONS shift to state 79
+## Reductions:
+
+State 79:
+## Known stack suffix:
+## MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0 BAR IDENT CONS
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0 BAR IDENT CONS . IDENT ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On IDENT shift to state 80
+## Reductions:
+
+State 80:
+## Known stack suffix:
+## MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0 BAR IDENT CONS IDENT
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0 BAR IDENT CONS IDENT . ARROW exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On ARROW shift to state 81
+## Reductions:
+
+State 81:
+## Known stack suffix:
+## MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0 BAR IDENT CONS IDENT ARROW
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0 BAR IDENT CONS IDENT ARROW . exp0 [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On MATCH shift to state 5
+-- On LPAREN shift to state 4
+-- On LET shift to state 46
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IF shift to state 51
+-- On IDENT shift to state 9
+-- On FUN shift to state 54
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 57
+-- On exp0 shift to state 82
+## Reductions:
+
+State 82:
+## Known stack suffix:
+## MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0 BAR IDENT CONS IDENT ARROW exp0
+## LR(1) items:
+exp0 -> MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0 BAR IDENT CONS IDENT ARROW exp0 . [ RPAREN IN EOF ELSE COMMA BAR ]
+## Transitions:
+## Reductions:
+-- On RPAREN IN EOF ELSE COMMA BAR
+--   reduce production exp0 -> MATCH exp1 WITH LBRACKET RBRACKET ARROW exp0 BAR IDENT CONS IDENT ARROW exp0
+
+State 83:
+## Known stack suffix:
+## LPAREN exp0
+## LR(1) items:
+exp7 -> LPAREN exp0 . RPAREN [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+exp7 -> LPAREN exp0 . COMMA exp0 RPAREN [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+-- On RPAREN shift to state 84
+-- On COMMA shift to state 85
+## Reductions:
+
+State 84:
+## Known stack suffix:
+## LPAREN exp0 RPAREN
+## LR(1) items:
+exp7 -> LPAREN exp0 RPAREN . [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+## Reductions:
+-- On WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND
+--   reduce production exp7 -> LPAREN exp0 RPAREN
+
+State 85:
+## Known stack suffix:
+## LPAREN exp0 COMMA
+## LR(1) items:
+exp7 -> LPAREN exp0 COMMA . exp0 RPAREN [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+-- On UNIT shift to state 1
+-- On NOT shift to state 2
+-- On MINUS shift to state 3
+-- On MATCH shift to state 5
+-- On LPAREN shift to state 4
+-- On LET shift to state 46
+-- On LBRACKET shift to state 6
+-- On INT shift to state 8
+-- On IF shift to state 51
+-- On IDENT shift to state 9
+-- On FUN shift to state 54
+-- On BOOL shift to state 10
+-- On exp7 shift to state 11
+-- On exp6 shift to state 12
+-- On exp5 shift to state 14
+-- On exp4 shift to state 15
+-- On exp3 shift to state 20
+-- On exp2 shift to state 25
+-- On exp1 shift to state 57
+-- On exp0 shift to state 86
+## Reductions:
+
+State 86:
+## Known stack suffix:
+## LPAREN exp0 COMMA exp0
+## LR(1) items:
+exp7 -> LPAREN exp0 COMMA exp0 . RPAREN [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+-- On RPAREN shift to state 87
+## Reductions:
+
+State 87:
+## Known stack suffix:
+## LPAREN exp0 COMMA exp0 RPAREN
+## LR(1) items:
+exp7 -> LPAREN exp0 COMMA exp0 RPAREN . [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+## Reductions:
+-- On WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND
+--   reduce production exp7 -> LPAREN exp0 COMMA exp0 RPAREN
+
+State 88:
+## Known stack suffix:
+## MINUS exp6
+## LR(1) items:
+exp6 -> MINUS exp6 . [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+## Reductions:
+-- On WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND
+--   reduce production exp6 -> MINUS exp6
+
+State 89:
+## Known stack suffix:
+## NOT exp6
+## LR(1) items:
+exp6 -> NOT exp6 . [ WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND ]
+## Transitions:
+## Reductions:
+-- On WITH UNIT TIMES THEN RPAREN PLUS OR NOT NEQ MINUS LT LPAREN LEQ LBRACKET INT IN IDENT GT GEQ EQ EOF ELSE DIV CONS COMMA BOOL BAR AND
+--   reduce production exp6 -> NOT exp6
+
+State 90:
+## Known stack suffix:
+## parse
+## LR(1) items:
+parse' -> parse . [ # ]
+## Transitions:
+## Reductions:
+-- On #
+--   accept parse
+
+State 91:
+## Known stack suffix:
+## exp0
+## LR(1) items:
+parse -> exp0 . EOF [ # ]
+## Transitions:
+-- On EOF shift to state 92
+## Reductions:
+
+State 92:
+## Known stack suffix:
+## exp0 EOF
+## LR(1) items:
+parse -> exp0 EOF . [ # ]
+## Transitions:
+## Reductions:
+-- On #
+--   reduce production parse -> exp0 EOF
+
